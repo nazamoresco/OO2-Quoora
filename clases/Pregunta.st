@@ -1,0 +1,71 @@
+'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 28 March 2020 at 7:30:55.706419 pm'!
+PostEscrito subclass: #Pregunta
+	instanceVariableNames: 'titulo topicos respuestas'
+	classVariableNames: ''
+	package: 'Quoora'!
+
+!Pregunta methodsFor: 'initialize' stamp: 'franBeb 3/27/2020 16:08'!
+initialize
+super initialize.
+topicos:=Set new.
+respuestas:= OrderedCollection new.! !
+
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:03'!
+respuestasDelUsuario: u
+^ respuestas select: [:each| each autor=u]! !
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:04'!
+agregarTopico: t
+	topicos add: t! !
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:45'!
+contieneTopico: t
+	^topicos includes: t.! !
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:13'!
+devolverRespuestasOrdenadas
+|ord|
+	ord:=SortedCollection new sortBlock: [:c1 :c2 | c1 puntajeLikes <= c2 puntajeLikes. ].
+	ord addAll: respuestas .
+	^ord
+	! !
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/28/2020 19:29'!
+puntaje 
+^20 + self puntajeLikes .! !
+
+!Pregunta methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:08'!
+agregarRespuesta: r
+	respuestas addLast: r! !
+
+
+!Pregunta methodsFor: 'accessing' stamp: 'franBeb 3/27/2020 15:45'!
+topicos
+	^ topicos! !
+
+!Pregunta methodsFor: 'accessing' stamp: 'franBeb 3/27/2020 15:45'!
+titulo: anObject
+	titulo := anObject! !
+
+!Pregunta methodsFor: 'accessing' stamp: 'franBeb 3/27/2020 15:45'!
+respuestas
+	^ respuestas! !
+
+!Pregunta methodsFor: 'accessing' stamp: 'franBeb 3/27/2020 15:45'!
+titulo
+	^ titulo! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+Pregunta class
+	instanceVariableNames: ''!
+
+!Pregunta class methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 15:44'!
+texto: t autor: a titulo: tit
+				|obj|
+	obj:=super texto: t autor: a.
+	obj titulo: tit.
+	^obj
+	
+	! !
