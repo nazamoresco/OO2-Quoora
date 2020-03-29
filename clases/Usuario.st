@@ -1,57 +1,1 @@
-'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 27 March 2020 at 2:43:32.875958 pm'!
-Object subclass: #Usuario
-	instanceVariableNames: 'seguidos topicos nombre contraseña fechaYHora'
-	classVariableNames: ''
-	package: 'Quoora'!
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:38'!
-filtrarPreguntasInteres: preguntas
-	^ preguntas select: [ :preg| self meInteresa: preg]! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:43'!
-dislike: post 
-	post votar: false deUsuario: self! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 13:49'!
-initialize 
-	topicos := OrderedCollection new.
-	seguidos := OrderedCollection new.
-	fechaYHora := DateAndTime now.! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:36'!
-like: post 
-	post votar: true  self! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:42'!
-meInteresa: pregunta 
-
-	^ (seguidos anySatisfy: [ :seguido| pregunta esMiAutor: seguido ]) or: (topicos anySatisfy: [ :topico| pregunta contieneTopico: topico ])! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:37'!
-agregarTopico: topico
-	topicos add:topico.
-	^topico.! !
-
-!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:34'!
-seguir: usuario 
-	seguidos add:usuario.
-	^usuario.! !
-
-
-!Usuario methodsFor: 'as yet unclassified' stamp: 'nazamoresco 3/27/2020 13:52'!
-nombre: nom contraseña: con 
-	nombre:= nom.
-	contraseña := con.
-	! !
-
-"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
-
-Usuario class
-	instanceVariableNames: ''!
-
-!Usuario class methodsFor: 'as yet unclassified' stamp: 'nazamoresco 3/27/2020 13:53'!
-nombre: nom contraseña: con
-	| usu |
-	usu := self new.
-	usu nombre: nom contraseña: con.
-	^ usu! !
+'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 29 March 2020 at 3:09:05.583875 pm'!Object subclass: #Usuario	instanceVariableNames: 'seguidos topicos nombre contraseña fechaYHora'	classVariableNames: ''	package: 'Quoora'!!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:38'!filtrarPreguntasInteres: preguntas	^ preguntas select: [ :preg| self meInteresa: preg]! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:43'!dislike: post 	post votar: false deUsuario: self! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 13:49'!initialize 	topicos := OrderedCollection new.	seguidos := OrderedCollection new.	fechaYHora := DateAndTime now.! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/28/2020 21:04'!like: post 	post votar:true  deUsuario:self.	! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:42'!meInteresa: pregunta 	^ (seguidos anySatisfy: [ :seguido| pregunta esMiAutor: seguido ]) or: (topicos anySatisfy: [ :topico| pregunta contieneTopico: topico ])! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:37'!agregarTopico: topico	topicos add:topico.	^topico.! !!Usuario methodsFor: 'initialization' stamp: 'nazamoresco 3/27/2020 14:34'!seguir: usuario 	seguidos add:usuario.	^usuario.! !!Usuario methodsFor: 'as yet unclassified' stamp: 'nazamoresco 3/27/2020 13:52'!nombre: nom contraseña: con 	nombre:= nom.	contraseña := con.	! !"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!Usuario class	instanceVariableNames: ''!!Usuario class methodsFor: 'as yet unclassified' stamp: 'nazamoresco 3/27/2020 13:53'!nombre: nom contraseña: con	| usu |	usu := self new.	usu nombre: nom contraseña: con.	^ usu! !
