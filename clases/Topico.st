@@ -1,33 +1,1 @@
-'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 27 March 2020 at 4:36:59.842265 pm'!
-Object subclass: #Topico
-	instanceVariableNames: 'nombre descripcion'
-	classVariableNames: ''
-	package: 'Quoora'!
-
-!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!
-descripcion: anObject
-	descripcion := anObject! !
-
-!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!
-nombre: anObject
-	nombre := anObject! !
-
-!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!
-nombre
-	^ nombre! !
-
-!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!
-descripcion
-	^ descripcion! !
-
-"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
-
-Topico class
-	instanceVariableNames: ''!
-
-!Topico class methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:26'!
-nombre: n descripcio: d
-				|obj|
-	obj:= self new.
-	obj nombre: n; descripcion:d.
-	^obj! !
+'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 29 March 2020 at 3:16:14.632508 pm'!Object subclass: #Topico	instanceVariableNames: 'nombre descripcion'	classVariableNames: ''	package: 'Quoora'!!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!descripcion: anObject	descripcion := anObject! !!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!nombre: anObject	nombre := anObject! !!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!nombre	^ nombre! !!Topico methodsFor: 'accessing' stamp: 'franBeb 3/26/2020 21:15'!descripcion	^ descripcion! !"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!Topico class	instanceVariableNames: ''!!Topico class methodsFor: 'as yet unclassified' stamp: 'franBeb 3/27/2020 16:26'!nombre: n descripcio: d				|obj|	obj:= self new.	obj nombre: n; descripcion:d.	^obj! !
