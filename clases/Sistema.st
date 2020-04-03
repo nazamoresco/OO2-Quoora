@@ -10,7 +10,6 @@ initialize
 	preguntas := OrderedCollection  new.
 	topicos := OrderedCollection  new.! !
 
-
 !Sistema methodsFor: 'as yet unclassified' stamp: 'nazamoresco 3/27/2020 13:50'!
 obtenerPreguntasTopico: topico
 	^ preguntas select: [ :each | each contieneTopico: topico ]! !
