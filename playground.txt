@@ -1,5 +1,4 @@
-WAAdmin register: Inicio asApplicationAt: 'quoora'.
-WAAdmin register: LogIn  asApplicationAt: 'login'.
+WAAdmin register: InicioComponent  asApplicationAt: 'quoora'.
 
 Sistema clearSoleInstance .
 s:=Sistema soleInstance .
@@ -9,4 +8,5 @@ s agregarUsuario: f.
 s agregarUsuario: n.
 
 n seguir: f.
+f seguir: f.
 s agregarPregunta: (Pregunta texto: 'la verdad que no se' autor:f  titulo: 'cuanto es 2+2?').
