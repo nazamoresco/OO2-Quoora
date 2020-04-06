@@ -1,5 +1,5 @@
-WAAdmin register: InicioComponent  asApplicationAt: 'quoora'.
-
+app := WAAdmin register: InicioComponent  asApplicationAt: 'quoora'.
+app sessionClass: SesionConUsuario .
 Sistema clearSoleInstance .
 s:=Sistema soleInstance .
 n:=Usuario nombre: 'naza' contraseña: '1'.
