@@ -1,0 +1,1 @@
+'From Pharo8.0.0 of 22 January 2020 [Build information: Pharo-8.0.0+build.1124.sha.0932da82f08175e906b0e2a8052120c823374e9f (64 Bit)] on 11 April 2020 at 5:32:27.735798 pm'!SesionIniciadaComponent subclass: #NuevaPreguntaComponent	instanceVariableNames: ''	classVariableNames: ''	package: 'Quoora-UI'!
