@@ -1,4 +1,5 @@
-app := WAAdmin register: InicioComponent  asApplicationAt: 'quoora'.
+
+app := WAAdmin register: InicioComponent  asApplicationAt: 'yahoo'.
 app sessionClass: SesionConUsuario .
 Sistema clearSoleInstance .
 s:=Sistema soleInstance .
@@ -9,4 +10,13 @@ s agregarUsuario: n.
 
 n seguir: f.
 f seguir: f.
-s agregarPregunta: (Pregunta texto: 'la verdad que no se' autor:f  titulo: 'cuanto es 2+2?').
+p:= Pregunta texto: 'la verdad que no se' autor:f  titulo: 'sfasfasdfa?'.
+t:= Topico nombre: 'electronica' descripcio: 'changa'.
+p agregarTopico: t.
+s agregarPregunta: (p).
+
+r:= Respuesta texto: 'no hables de lo que no sabes flaco' autor: n.
+p agregarRespuesta: r.
+
+s preguntasDeUsuario: f.
+s devolverPreguntasRelevantesEnOrden: f.
