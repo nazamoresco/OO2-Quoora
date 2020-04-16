@@ -1,0 +1,5 @@
+Informacion del Grupo
+
+Nazareno Moresco 16041/5 y Franco Bebczuk 16360/7.
+
+La URL para acceder a la aplicacion es: http://localhost:8080/quoora
